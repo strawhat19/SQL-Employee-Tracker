@@ -1,0 +1,26 @@
+{
+  "name": "sql-employee-tracker",
+  "version": "1.0.0",
+  "description": "An employee tracker that uses SQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strawhat19/SQL-Employee-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strawhat19/SQL-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/strawhat19/SQL-Employee-Tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "inquirer": "^8.1.4",
+    "mysql2": "^2.3.0"
+  }
+}

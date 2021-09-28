@@ -160,6 +160,39 @@ const db = mysql.createConnection(
       })
   }
 
-  // Add Employee
+  function addEmployee() {
+      let rolesQuery = `SELECT title FROM role`;
+      let managersQuery = `SELECT employee.first_name, employee.last_name, role.title, role.salary, department.department_name, employee.manager_id FROM employee JOIN role ON role.role_id = employee.role_id JOIN department ON role.department_id = department.id WHERE employee.manager_id = 0 ORDER BY employee.employee_id;`;
+
+      db.query(rolesQuery, (error, roles) => {
+        error ? console.log(error) : true;
+        let roles = roles;
+
+        db.query(managersQuery, (error,managers) => {
+            error ? console.log(error) : true;
+
+            function getManagerList() {
+                let managerList = [];
+                managers.forEach(manager => managerList.push(manager.first_name + ` ` + manager.last_name));
+                managerList.push(`No Manager(s)`);
+                return managerList;
+            }
+
+            roles.forEach(role => {
+                role.manager_id == 0 ? role.manager = `None` : role.manager = role[role.manager_id - 1].first_name + ` ` + role[role.manager_id - 1].last_name;
+                delete role.manager_id;
+            })
+
+            console.table(managers);
+
+            const employeePrompt = [
+                {
+
+                }
+            ]
+        })
+        
+      })
+  }
 
 promptMenu();

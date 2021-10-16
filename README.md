@@ -3,7 +3,7 @@ An employee tracker that uses SQL.
 
 ![license MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
-![Screenshot of Application](./assets/screenshot.jpg)
+![Screenshot of Application](https://raw.githubusercontent.com/strawhat19/SQL-Employee-Tracker/main/assets/screenshot.JPG)
 
 ## **Table of Contents**
 * [Installation](#installation)
